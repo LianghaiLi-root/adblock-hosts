@@ -5,8 +5,8 @@ Generated from Aliyun server v2 lists (2026-09-03).
 
 ## Files
 
-- hosts.txt : AdAway hosts-format blacklist, 110 ad domains (0.0.0.0 + domain per line). Add as an AdAway / BindHosts hosts source.
-- blacklist.txt : same 110 ad domains in pure-domain form (one per line), for scripts / other tools.
+- hosts.txt : AdAway hosts-format blacklist, 113 ad domains (0.0.0.0 + domain per line). Add as an AdAway / BindHosts hosts source.
+- blacklist.txt : same 113 ad domains in pure-domain form (one per line), for scripts / other tools.
 - whitelist.txt : merged whitelist 21 entries = whitelist_v2 (14) + whitelist_custom (7), for allow-listing.
 
 ## Subscribe raw URLs
