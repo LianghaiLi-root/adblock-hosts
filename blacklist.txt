@@ -1,9 +1,9 @@
 # 动漫共和国(com.shizi.tool.p3) 广告域名黑名单(纯域名)
-# 合计 110 条
+# 合计 113 条
 # 来源: blacklist_v2.txt
-
 1rtb.cn
 8car0x2emn.1rtb.com
+ad-api.adn-plus.com.cn
 ad.toutiao.com
 adkwai.com
 admate.cn
@@ -14,6 +14,7 @@ adservice.sigmob.cn
 adsfile.qq.com
 adslvfile.qq.com
 adslvseed.qq.com
+adx-track.adn-plus.com.cn
 adxtool.sigmob.cn
 ali-ad.a.yximgs.com
 api-access.pangolin-sdk-toutiao.com
@@ -76,6 +77,7 @@ rtbcallback.sigmob.cn
 sdk-demo.1rtb.net
 sdk-report.1rtb.com
 sdk.1rtb.net
+sdk.beizi.biz
 sdk.mobads.adwangmai.com
 sf16-static.i18n-pglstatp.com
 sf6-ttcdn-tos.pstatp.com
