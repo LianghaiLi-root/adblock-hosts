@@ -1,22 +1,27 @@
 ! 动漫共和国(com.shizi.tool.p3) 放行白名单 - AdGuardHome 例外规则 (allowlist)
-! 共 19 条真实域名 (已剔除 10.0.2.2/localhost 等非DNS项)
+! 合并自两份源: whitelist_v2(功能/框架域) + whitelist_custom_v2(自营/内容核心域)
+! 共 19 条真实域名 (已剔除 10.0.2.2/localhost 等非DNS项) [自动生成 2026-09-05]
 ! 导入: AdGuardHome -> 过滤器 -> DNS允许清单 (Allowlist) -> 添加过滤器列表
+!
+! ===== [来源1] whitelist_v2.txt —— 功能/框架 SDK 域 (12条) =====
 @@||apps.samsung.com^
 @@||com.huawei.hwid.tv^
-@@||dns.alidns.com^
 @@||docs.sentry.io^
-@@||doh.360.cn^
-@@||doh.pub^
-@@||doubanio.com^
 @@||github.com^
 @@||gmail.com^
 @@||hapjs.org^
 @@||journeyapps.com^
-@@||movie.douban.com^
 @@||outbreak.jetbrains.com^
 @@||plugins.flutter.io^
-@@||pzl.clicli.blog^
 @@||schemas.android.com^
-@@||vod.api.zshtys888.com^
 @@||www.samsungapps.com^
 @@||youbreakout.jetbrains.com^
+!
+! ===== [来源2] whitelist_custom_v2.txt —— 自营/内容依赖核心域(7条,含DoH) =====
+@@||dns.alidns.com^
+@@||doh.360.cn^
+@@||doh.pub^
+@@||doubanio.com^
+@@||movie.douban.com^
+@@||pzl.clicli.blog^
+@@||vod.api.zshtys888.com^
