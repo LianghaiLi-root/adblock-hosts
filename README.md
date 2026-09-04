@@ -16,7 +16,7 @@ Generated/updated: 2026-09-05
 │   ├── blacklist.txt
 │   └── whitelist.txt
 └── geodata/    V2Ray geosite 二进制 `.dat`(含 tag) → dae/daed/v2ray/xray 的 `ext:` 引用
-    └── blacklist_geosite.dat
+    └── Lhl.dat
 ```
 
 ## 订阅连接 / Subscription links（按工具选用）
@@ -33,15 +33,15 @@ Generated/updated: 2026-09-05
 - whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （19 条）
 
 ### 4) dae / daed / v2ray / xray（二进制 geosite `.dat`）
-- geodata : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/geodata/blacklist_geosite.dat
+- geodata : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/geodata/Lhl.dat
 
 `.dat` 为 **V2Ray asset 二进制格式**（非纯文本），内部含两个 tag，使用 `ext:` 按标签引用：
-- `ext:"blacklist_geosite.dat:blacklist"` —— 广告黑名单（113 条，`full` 精确匹配）
-- `ext:"blacklist_geosite.dat:whitelist"` —— 白名单（19 条，`full` 精确匹配）
-- xray/v2ray 例：`domain(ext:blacklist_geosite.dat:blacklist) -> block`
-- dae/daed routing 例：`domain(ext:"blacklist_geosite.dat:blacklist") -> block`
+- `ext:"Lhl.dat:blacklist"` —— 广告黑名单（113 条，`full` 精确匹配）
+- `ext:"Lhl.dat:whitelist"` —— 白名单（19 条，`full` 精确匹配）
+- xray/v2ray 例：`domain(ext:Lhl.dat:blacklist) -> block`
+- dae/daed routing 例：`domain(ext:"Lhl.dat:blacklist") -> block`
 
-> 说明：本仓库不随带官方 `geoip.dat`/`geosite.dat`。此 `blacklist_geosite.dat` 仅含本仓库自维护的广告黑白名单两个 tag，供需要精确域名拦截的自定义 dat 场景使用（如 daed 的 `ext:` 引用）。
+> 说明：本仓库不随带官方 `geoip.dat`/`geosite.dat`。此 `Lhl.dat` 仅含本仓库自维护的广告黑白名单两个 tag，供需要精确域名拦截的自定义 dat 场景使用（如 daed 的 `ext:` 引用）。
 
 ## 规则说明 / Rules
 - 广告黑名单（blacklist）：113 个广告域名，匹配方式为 `full`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。
