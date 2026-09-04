@@ -1,6 +1,4 @@
-# 动漫共和国(com.shizi.tool.p3) 广告黑名单 - AdGuardHome DNS 拦截规则 (adblock格式)
-# 共 113 条  [自动生成 2026-09-05, 源: 阿里云 work/ads blacklist_v2.txt]
-# 导入: AdGuardHome -> 过滤器 -> DNS拦截清单 -> 添加过滤器列表
+# Generated/updated: 2026-09-04
 ||1rtb.cn^
 ||8car0x2emn.1rtb.com^
 ||ad-api.adn-plus.com.cn^
