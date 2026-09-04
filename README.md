@@ -1,35 +1,49 @@
 # adblock-hosts
 
-Ad blocking subscription serving **AdAway/BindHosts** (hosts-format) and **AdGuardHome** (DNS adblock rules).
-Generated/updated: 2026-09-04
+面向广告拦截的订阅源仓库，按**目标工具/格式**分目录管理。覆盖 AdAway/BindHosts（hosts 格式）、AdGuardHome（adblock 规则）、通用纯域名工具，以及 **dae / daed / v2ray / xray**（V2Ray 二进制 geosite `.dat`）。
 
-## 订阅连接 / Subscription links
-适用于两类工具，请按需选用对应连接：
+Generated/updated: 2026-09-05
 
-### 1) AdAway / BindHosts（hosts 格式）— 供 AdAway、BindHosts 等 hosts 源工具导入
-- hosts.txt : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/hosts.txt
-- blacklist.txt : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/blacklist.txt （纯域名）
+## 目录结构 / Layout
+```
+├── README.md
+├── hosts/      hosts-format（每行 `0.0.0.0 域名`）→ AdAway / BindHosts
+│   └── hosts.txt
+├── adguard/    Adblock 语法 `||域名^` / `@@||域名^` → AdGuard Home
+│   ├── adguard_blacklist.txt
+│   └── adguard_whitelist.txt
+├── domain/     纯域名（每行一个域名）→ 按内容解析的通用工具
+│   ├── blacklist.txt
+│   └── whitelist.txt
+└── geodata/    V2Ray geosite 二进制 `.dat`(含 tag) → dae/daed/v2ray/xray 的 `ext:` 引用
+    └── blacklist_geosite.dat
+```
 
-### 2) AdGuardHome（adblock 语法，DNS 级）— 供 AdGuardHome 的“DNS拦截清单 / 允许清单”导入
-- **黑名单(拦截)**: https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard_blacklist.txt （每行 `||domain^`）
-- **白名单(例外放行)**: https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard_whitelist.txt （每行 `@@||domain^`）
+## 订阅连接 / Subscription links（按工具选用）
 
-### 3) 纯域名格式（pure-domain, `.dat`）— 供支持纯域名列表/`Hosts` 源工具导入（每行一个域名）
-- blacklist.dat : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/blacklist.dat
-- whitelist.dat : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/whitelist.dat
+### 1) AdAway / BindHosts（hosts 格式）
+- hosts : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/hosts/hosts.txt
 
-> 订阅连接（hosts.txt / blacklist.txt / whitelist.txt / *.dat）均为纯域名/规则，可持续更新使用。
+### 2) AdGuard Home（adblock 语法）
+- 黑名单(拦截) : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard/adguard_blacklist.txt （每行 `||domain^`）
+- 白名单(例外) : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard/adguard_whitelist.txt （每行 `@@||domain^`）
 
-## File / 文件说明
-### AdAway / BindHosts 用途
-- hosts.txt : hosts-format, 113 ad domains (`0.0.0.0 domain`)。Add as an AdAway / BindHosts hosts source.
-- blacklist.txt : same 113 ad domains in pure-domain form (one per line).
-- whitelist.txt : allow-list entries, for allow-listing.
+### 3) 纯域名（供按内容解析的通用工具）
+- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （113 条）
+- whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （19 条）
 
-### AdGuardHome 用途
-- adguard_blacklist.txt : DNS 广告拦截规则，adblock 格式 `||domain^`，113 条。AdGuardHome 导入路径：过滤器 -> DNS拦截清单 -> 添加过滤器列表 -> 填入上面 raw 连接。
-- adguard_whitelist.txt : 例外/放行规则，adblock allowlist 格式 `@@||domain^`，19 条真实域名(已剔除 10.0.2.2 / localhost 等非 DNS 项)。AdGuardHome 导入路径：过滤器 -> DNS允许清单 -> 添加过滤器列表。
+### 4) dae / daed / v2ray / xray（二进制 geosite `.dat`）
+- geodata : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/geodata/blacklist_geosite.dat
 
-### 纯域名 `.dat` 用途
-- blacklist.dat : 113 条广告纯域名（每行一个），与 blacklist.txt 同一域名集合。
-- whitelist.dat : 19 条白名单真实纯域名（每行一个），与 whitelist.txt / adguard_whitelist.txt 同一域名集合，供支持纯域名列表源的工具（如 `Hosts` 类源、自定义 hosts）导入。
+`.dat` 为 **V2Ray asset 二进制格式**（非纯文本），内部含两个 tag，使用 `ext:` 按标签引用：
+- `ext:"blacklist_geosite.dat:blacklist"` —— 广告黑名单（113 条，`full` 精确匹配）
+- `ext:"blacklist_geosite.dat:whitelist"` —— 白名单（19 条，`full` 精确匹配）
+- xray/v2ray 例：`domain(ext:blacklist_geosite.dat:blacklist) -> block`
+- dae/daed routing 例：`domain(ext:"blacklist_geosite.dat:blacklist") -> block`
+
+> 说明：本仓库不随带官方 `geoip.dat`/`geosite.dat`。此 `blacklist_geosite.dat` 仅含本仓库自维护的广告黑白名单两个 tag，供需要精确域名拦截的自定义 dat 场景使用（如 daed 的 `ext:` 引用）。
+
+## 规则说明 / Rules
+- 广告黑名单（blacklist）：113 个广告域名，匹配方式为 `full`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。
+- 白名单（whitelist）：19 个真实放行域名（已剔除 10.0.2.2 / localhost 等非 DNS 项），同样为 `full` 精确匹配。
+- 各格式文件（hosts / adguard / domain / geodata）均由同一份权威域名清单派生，内容一致，仅面向工具不同。
