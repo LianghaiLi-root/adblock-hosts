@@ -1,6 +1,4 @@
-# 动漫共和国(com.shizi.tool.p3) 广告域名黑名单(纯域名)
-# 合计 113 条
-# 来源: blacklist_v2.txt
+# Generated/updated: 2026-09-04
 1rtb.cn
 8car0x2emn.1rtb.com
 ad-api.adn-plus.com.cn
