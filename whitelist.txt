@@ -1,7 +1,4 @@
-# 动漫共和国(com.shizi.tool.p3) 放行白名单 (合并 whitelist_v2 + whitelist_custom)
-# 合计 21 条
-# v2 数据源, 供 BindHosts 放行 / 白名单参考
-
+# Generated/updated: 2026-09-04
 10.0.2.2
 apps.samsung.com
 com.huawei.hwid.tv
