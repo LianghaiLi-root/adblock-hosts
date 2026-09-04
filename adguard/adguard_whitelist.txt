@@ -1,0 +1,20 @@
+! Generated/updated: 2026-09-04
+@@||apps.samsung.com^
+@@||com.huawei.hwid.tv^
+@@||docs.sentry.io^
+@@||github.com^
+@@||gmail.com^
+@@||hapjs.org^
+@@||journeyapps.com^
+@@||outbreak.jetbrains.com^
+@@||plugins.flutter.io^
+@@||schemas.android.com^
+@@||www.samsungapps.com^
+@@||youbreakout.jetbrains.com^
+@@||dns.alidns.com^
+@@||doh.360.cn^
+@@||doh.pub^
+@@||doubanio.com^
+@@||movie.douban.com^
+@@||pzl.clicli.blog^
+@@||vod.api.zshtys888.com^
