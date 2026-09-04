@@ -1,6 +1,4 @@
-# 动漫共和国(com.shizi.tool.p3) AdAway/BindHosts 广告黑名单 hosts
-# 合计 113 条广告域名
-# 来源: 阿里云 work/ads blacklist_v2.txt (v2 113条)
+# Generated/updated: 2026-09-04
 0.0.0.0 1rtb.cn
 0.0.0.0 8car0x2emn.1rtb.com
 0.0.0.0 ad-api.adn-plus.com.cn
