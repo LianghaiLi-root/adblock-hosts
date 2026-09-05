@@ -1,4 +1,4 @@
-! Generated/updated: 2026-09-04
+! Generated/updated: 2026-09-05
 @@||apps.samsung.com^
 @@||com.huawei.hwid.tv^
 @@||docs.sentry.io^
@@ -11,9 +11,6 @@
 @@||schemas.android.com^
 @@||www.samsungapps.com^
 @@||youbreakout.jetbrains.com^
-@@||dns.alidns.com^
-@@||doh.360.cn^
-@@||doh.pub^
 @@||doubanio.com^
 @@||movie.douban.com^
 @@||pzl.clicli.blog^
