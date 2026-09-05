@@ -29,21 +29,21 @@ Generated/updated: 2026-09-05
 - 白名单(例外) : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard/adguard_whitelist.txt （每行 `@@||domain^`）
 
 ### 3) 纯域名（供按内容解析的通用工具）
-- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （113 条）
-- whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （19 条）
+- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （161 条）
+- whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （16 条）
 
 ### 4) dae / daed / v2ray / xray（二进制 geosite `.dat`）
 - geodata : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/geodata/Lhl.dat
 
 `.dat` 为 **V2Ray asset 二进制格式**（非纯文本），内部含两个 tag，使用 `ext:` 按标签引用：
-- `ext:"Lhl.dat:blacklist"` —— 广告黑名单（113 条，`full` 精确匹配）
-- `ext:"Lhl.dat:whitelist"` —— 白名单（19 条，`full` 精确匹配）
+- `ext:"Lhl.dat:blacklist"` —— 广告黑名单（161 条，`full` 精确匹配）
+- `ext:"Lhl.dat:whitelist"` —— 白名单（16 条，`full` 精确匹配）
 - xray/v2ray 例：`domain(ext:Lhl.dat:blacklist) -> block`
 - dae/daed routing 例：`domain(ext:"Lhl.dat:blacklist") -> block`
 
 > 说明：本仓库不随带官方 `geoip.dat`/`geosite.dat`。此 `Lhl.dat` 仅含本仓库自维护的广告黑白名单两个 tag，供需要精确域名拦截的自定义 dat 场景使用（如 daed 的 `ext:` 引用）。
 
 ## 规则说明 / Rules
-- 广告黑名单（blacklist）：113 个广告域名，匹配方式为 `full`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。
-- 白名单（whitelist）：19 个真实放行域名（已剔除 10.0.2.2 / localhost 等非 DNS 项），同样为 `full` 精确匹配。
+- 广告黑名单（blacklist）：161 个广告域名，匹配方式为 `full`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。
+- 白名单（whitelist）：16 个真实放行域名（已剔除 10.0.2.2 / localhost 等非 DNS 项及加密 DoH/DoT 服务器域名，如 dns.alidns.com / doh.360.cn / doh.pub），同样为 `full` 精确匹配。
 - 各格式文件（hosts / adguard / domain / geodata）均由同一份权威域名清单派生，内容一致，仅面向工具不同。
