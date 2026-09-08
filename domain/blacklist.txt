@@ -40,7 +40,6 @@ gifshow.com
 hw-ot-ad.a.yximgs.com
 js-ad.a.yximgs.com
 ks.pull.yximgs.com
-kuaishou.com
 log-sdk.gifshow.com
 log-sdk.ksapisrv.com
 mcs.snssdk.com
