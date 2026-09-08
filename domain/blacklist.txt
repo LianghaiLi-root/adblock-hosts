@@ -39,7 +39,6 @@ gdtimg.com
 gifshow.com
 hw-ot-ad.a.yximgs.com
 js-ad.a.yximgs.com
-ks.pull.yximgs.com
 log-sdk.gifshow.com
 log-sdk.ksapisrv.com
 mcs.snssdk.com
@@ -79,7 +78,6 @@ sdk.mobads.adwangmai.com
 sf16-static.i18n-pglstatp.com
 sf6-ttcdn-tos.pstatp.com
 sigmob.com
-static.yximgs.com
 style-browse-openapi.test.gifshow.com
 tbm.snssdk.com
 tdsdk-ip6.cpatrk.com
@@ -109,7 +107,6 @@ wlog.kuaishou.com
 www.talkingdata.net
 www.toutiaopage.com
 xlog.snssdk.com
-yximgs.com
 zt.gifshow.com
 httpdns.bilivideo.com
 httpdns.jd.com
