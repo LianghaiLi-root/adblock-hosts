@@ -1,0 +1,42 @@
+name: Build Lhl.dat (geosite 手动云编译)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-dat
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (含 history 以让 git push 可用)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 由 domain/*.txt 云编译 geodata/Lhl.dat
+        run: |
+          python3 .github/scripts/build_dat.py
+
+      - name: 存在变更则自动 commit 回 geodata/Lhl.dat
+        run: |
+          set -eux
+          if ! git status --porcelain geodata/Lhl.dat | grep -q .; then
+            echo "::notice:: geodata/Lhl.dat 无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add geodata/Lhl.dat
+          git commit -m "build(dat): geodata/Lhl.dat 云编译更新 @ $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
