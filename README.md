@@ -2,7 +2,7 @@
 
 面向广告拦截的订阅源仓库，按**目标工具/格式**分目录管理。覆盖 AdAway/BindHosts（hosts 格式）、AdGuardHome（adblock 规则）、通用纯域名工具，**dae / daed / v2ray / xray**（V2Ray 二进制 geosite `.dat`），以及 **sing-box / SagerNet 系**（二进制 rule-set `.srs`）。
 
-Generated/updated: 2026-09-05
+Generated/updated: 2026-10-17
 
 ## 目录结构 / Layout
 ```
@@ -32,7 +32,7 @@ Generated/updated: 2026-09-05
 - 白名单(例外) : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard/adguard_whitelist.txt （每行 `@@||domain^`）
 
 ### 3) 纯域名（供按内容解析的通用工具）
-- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （157 条）
+- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （155 条）
 - whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （16 条）
 
 ### 4) dae / daed / v2ray / xray（二进制 geosite `.dat`）
@@ -84,6 +84,6 @@ python3 .github/scripts/build_srs.py --dump-json
 ```
 
 ## 规则说明 / Rules
-- 广告黑名单（blacklist）：157 个广告域名，匹配方式为 `full` / `domain`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。
-- 白名单（whitelist）：16 个真实放行域名（已剔除 10.0.2.2 / localhost 等非 DNS 项及加密 DoH/DoT 服务器域名，如 dns.alidns.com / doh.360.cn / doh.pub），同样为 `full` / `domain` 精确匹配。
+- 广告黑名单（blacklist）：155 个广告域名，匹配方式为 `full` / `domain`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。含国内厂商 HTTPDNS/DoH（httpdns.baidu.com、doh.iqiyi.com 等）——App 的加密 DNS 解析失败后会降级走系统 DNS，广告域名由此进入本清单的拦截范围；不含用户自用 DNS（dns.alidns.com / doh.alidns.com 已于 2026-10-17 移除）。
+- 白名单（whitelist）：14 个真实放行域名（已剔除 10.0.2.2 / localhost 等非 DNS 项及加密 DoH/DoT 服务器域名，如 dns.alidns.com / doh.360.cn / doh.pub），同样为 `full` / `domain` 精确匹配。
 - 各格式文件（hosts / adguard / domain / geodata / singbox）均由同一份权威域名清单（`domain/*.txt`）派生，内容一致，仅面向工具不同。
