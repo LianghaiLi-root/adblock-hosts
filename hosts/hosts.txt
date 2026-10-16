@@ -1,4 +1,4 @@
-# Generated/updated: 2026-09-05
+# Generated/updated: 2026-10-17
 0.0.0.0 1rtb.cn
 0.0.0.0 8car0x2emn.1rtb.com
 0.0.0.0 ad-api.adn-plus.com.cn
@@ -151,8 +151,6 @@
 0.0.0.0 app.bilibili.com
 0.0.0.0 api.bilibili.com
 0.0.0.0 grpc.biliapi.net
-0.0.0.0 dns.alidns.com
-0.0.0.0 doh.alidns.com
 0.0.0.0 dns.pub
 0.0.0.0 doh.pub
 0.0.0.0 cloudflare-dns.com
