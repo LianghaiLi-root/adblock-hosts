@@ -1,9 +1,7 @@
-# Generated/updated: 2026-09-05
+# Generated/updated: 2026-10-17
 apps.samsung.com
 com.huawei.hwid.tv
 docs.sentry.io
-github.com
-gmail.com
 hapjs.org
 journeyapps.com
 outbreak.jetbrains.com
