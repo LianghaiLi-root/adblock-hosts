@@ -32,15 +32,15 @@ Generated/updated: 2026-10-17
 - 白名单(例外) : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/adguard/adguard_whitelist.txt （每行 `@@||domain^`）
 
 ### 3) 纯域名（供按内容解析的通用工具）
-- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （155 条）
-- whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （16 条）
+- blacklist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/blacklist.txt （154 条）
+- whitelist : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/domain/whitelist.txt （14 条）
 
 ### 4) dae / daed / v2ray / xray（二进制 geosite `.dat`）
 - geodata : https://raw.githubusercontent.com/LianghaiLi-root/adblock-hosts/main/geodata/Lhl.dat
 
 `.dat` 为 **V2Ray asset 二进制格式**（非纯文本），内部含两个 tag，使用 `ext:` 按标签引用：
-- `ext:"Lhl.dat:blacklist"` —— 广告黑名单（161 条，`full` 精确匹配）
-- `ext:"Lhl.dat:whitelist"` —— 白名单（16 条，`full` 精确匹配）
+- `ext:"Lhl.dat:blacklist"` —— 广告黑名单（154 条，`full` 精确匹配）
+- `ext:"Lhl.dat:whitelist"` —— 白名单（14 条，`full` 精确匹配）
 - xray/v2ray 例：`domain(ext:Lhl.dat:blacklist) -> block`
 - dae/daed routing 例：`domain(ext:"Lhl.dat:blacklist") -> block`
 
@@ -84,6 +84,6 @@ python3 .github/scripts/build_srs.py --dump-json
 ```
 
 ## 规则说明 / Rules
-- 广告黑名单（blacklist）：155 个广告域名，匹配方式为 `full` / `domain`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。含国内厂商 HTTPDNS/DoH（httpdns.baidu.com、doh.iqiyi.com 等）——App 的加密 DNS 解析失败后会降级走系统 DNS，广告域名由此进入本清单的拦截范围；不含用户自用 DNS（dns.alidns.com / doh.alidns.com 已于 2026-10-17 移除）。
+- 广告黑名单（blacklist）：154 个广告域名，匹配方式为 `full` / `domain`（仅精确命中该完整域名，不含其子域名）——符合“精准域名”语义。含国内厂商 HTTPDNS/DoH（httpdns.baidu.com、doh.iqiyi.com 等）——App 的加密 DNS 解析失败后会降级走系统 DNS，广告域名由此进入本清单的拦截范围；不含用户自用 DNS（dns.alidns.com / doh.alidns.com 已于 2026-10-17 移除）。
 - 白名单（whitelist）：14 个真实放行域名（已剔除 10.0.2.2 / localhost 等非 DNS 项及加密 DoH/DoT 服务器域名，如 dns.alidns.com / doh.360.cn / doh.pub），同样为 `full` / `domain` 精确匹配。
 - 各格式文件（hosts / adguard / domain / geodata / singbox）均由同一份权威域名清单（`domain/*.txt`）派生，内容一致，仅面向工具不同。

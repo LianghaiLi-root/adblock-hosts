@@ -149,7 +149,6 @@
 0.0.0.0 dsp-x.jd.com
 0.0.0.0 adx.jd.com
 0.0.0.0 app.bilibili.com
-0.0.0.0 api.bilibili.com
 0.0.0.0 grpc.biliapi.net
 0.0.0.0 dns.pub
 0.0.0.0 doh.pub

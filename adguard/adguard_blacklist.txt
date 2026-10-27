@@ -149,7 +149,6 @@
 ||dsp-x.jd.com^
 ||adx.jd.com^
 ||app.bilibili.com^
-||api.bilibili.com^
 ||grpc.biliapi.net^
 ||dns.pub^
 ||doh.pub^
